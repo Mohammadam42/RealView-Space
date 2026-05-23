@@ -8,12 +8,14 @@ export default defineConfig({
     allowedHosts: ['realview-space.onrender.com'],
   },
   build: {
+    chunkSizeWarningLimit: 700,
     rollupOptions: {
       output: {
         manualChunks: {
           react: ['react', 'react-dom'],
           three: ['three'],
           icons: ['lucide-react'],
+          modelviewer: ['@google/model-viewer'],
         },
       },
     },
